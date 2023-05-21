@@ -10,3 +10,28 @@ export interface BenefitType {
   title: string;
   description: string;
 }
+export interface ClassType {
+  name: string;
+  description: string;
+  image: string;
+}
+
+export interface owlCarouselOptionsTypes {
+  nav: boolean;
+  loop: boolean;
+  items: number;
+  dots: boolean;
+  margin: number;
+  navText: string[];
+  responsive: {
+    0: {
+      items: number;
+    };
+    576: {
+      items: number;
+    };
+    768: {
+      items: number;
+    };
+  };
+}
