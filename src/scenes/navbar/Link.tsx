@@ -8,17 +8,26 @@ type Props = {
 };
 
 const Link = ({ page, selectedPage, setSelectedPage }: Props) => {
-  const lowerCasePage = page.toLowerCase().replace(/ /g, " ") as SelectedPage;
+  const lowerCasePage = page.toLowerCase().replace(/ /g, "");
+
+  const displayPageName = (page: string) => {
+    if (page === "ourclasses") {
+      return "Our Classes";
+    } else if (page === "contactus") {
+      return "Contact Us";
+    }
+    return page;
+  };
 
   return (
     <AnchorLink
-      className={`${selectedPage === lowerCasePage ? "text-primary-500" : ""}
-      transition duration-500 hover:text-primary-300
-      `}
+      className={`${
+        selectedPage === lowerCasePage ? "text-primary-500" : ""
+      } transition duration-500 hover:text-primary-300`}
       href={`#${lowerCasePage}`}
-      onClick={() => setSelectedPage(lowerCasePage)}
+      onClick={() => setSelectedPage(lowerCasePage as SelectedPage)}
     >
-      {page}
+      {displayPageName(page)}
     </AnchorLink>
   );
 };

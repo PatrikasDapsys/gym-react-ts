@@ -14,13 +14,15 @@ type Props = {
 
 function Navbar({ selectedPage, setSelectedPage, isTopOfPage }: Props) {
   const [isMenuToggled, setIsMenuToggled] = useState<boolean>(false);
-  const navbarBackground = isTopOfPage ? "" :  "bg-primary-100 drop-shadow"
+  const navbarBackground = isTopOfPage ? "" : "bg-primary-100 drop-shadow";
   const flexBetween = "flex items-center justify-between";
   const isAboveMediumScreens = useMediaQuery("(min-width: 1060px)");
 
   return (
     <nav className="">
-      <div className={`${navbarBackground} ${flexBetween} fixed top-0 z-30 w-full py-6`}>
+      <div
+        className={`${navbarBackground} ${flexBetween} fixed top-0 z-30 w-full py-6`}
+      >
         <div className={`${flexBetween} mx-auto w-5/6`}>
           <div className={`${flexBetween} w-full gap-16`}>
             {/* Left side */}
@@ -42,17 +44,20 @@ function Navbar({ selectedPage, setSelectedPage, isTopOfPage }: Props) {
                   <Link
                     selectedPage={selectedPage}
                     setSelectedPage={setSelectedPage}
-                    page="Our classes"
+                    page={SelectedPage.OurClasses}
                   />
                   <Link
                     selectedPage={selectedPage}
                     setSelectedPage={setSelectedPage}
-                    page="Contact Us"
+                    page={SelectedPage.ContactUs}
                   />
                 </div>
                 <div className={`${flexBetween} gap-8`}>
-                  <p>Sign In</p>
-                  <ActionButton setSelectedPage={setSelectedPage}>
+                  <p className="cursor-no-drop">Sign In</p>
+                  <ActionButton
+                    setSelectedPage={setSelectedPage}
+                    page={SelectedPage.ContactUs}
+                  >
                     Become a Member
                   </ActionButton>
                 </div>
