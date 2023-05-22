@@ -40,6 +40,7 @@ const container = {
 
 type Props = {
   setSelectedPage: (value: SelectedPage) => void;
+  page: string;
 };
 
 function Benefits({ setSelectedPage }: Props) {
@@ -154,7 +155,7 @@ function Benefits({ setSelectedPage }: Props) {
             {/* BUTTON  */}
             <div className="relative mt-16">
               <div className="before:-bottum-20 before:absolute before:right-40 before:z-[-1] before:content-sparkles">
-                <ActionButton setSelectedPage={setSelectedPage}>
+                <ActionButton setSelectedPage={setSelectedPage} page={SelectedPage.Benefits}>
                   Join Now
                 </ActionButton>
               </div>
