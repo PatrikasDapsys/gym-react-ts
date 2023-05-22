@@ -11,6 +11,7 @@ import { motion } from "framer-motion";
 
 type Props = {
   setSelectedPage: (value: SelectedPage) => void;
+  page: string;
 };
 
 const Home = ({ setSelectedPage }: Props) => {
@@ -61,7 +62,7 @@ const Home = ({ setSelectedPage }: Props) => {
             }}
             className="mt-8 flex items-center gap-8"
           >
-            <ActionButton setSelectedPage={setSelectedPage}>
+            <ActionButton setSelectedPage={setSelectedPage} page={SelectedPage.Home}>
               Join Now
             </ActionButton>
             <AnchorLink

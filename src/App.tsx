@@ -31,7 +31,7 @@ function App() {
         selectedPage={selectedPage}
         setSelectedPage={setSelectedPage}
       />
-      <Home setSelectedPage={setSelectedPage}/>
+      <Home setSelectedPage={setSelectedPage} page={selectedPage}/>
       <Benefits setSelectedPage={setSelectedPage} page={selectedPage}/>
       <OurClasses setSelectedPage={setSelectedPage}/>
       <ContactUs setSelectedPage={setSelectedPage}/>
